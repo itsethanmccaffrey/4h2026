@@ -11,9 +11,10 @@ body {
     background-color: #E8DCC5;
     color: #103159;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 28px;
+    padding: 14px 20px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -25,11 +26,12 @@ body {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 16px;
 }
 
+/* Logo height defines header height */
 .header-logo {
-    height: 85px;
+    height: 70px;
     width: auto;
     object-fit: contain;
 }
@@ -39,9 +41,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* fixed width so both lines match */
+    width: 260px;
 }
 
-/* Both lines same font, bold, uppercase */
+/* Both lines same font, bold, uppercase, single line */
 .name,
 .slogan {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
@@ -50,20 +54,19 @@ body {
     color: #103159;
     white-space: nowrap;
     line-height: 1.1;
+    text-align: center;
 }
 
 /* Name line */
 .name {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 8px;
 }
 
-/* Slogan line — auto‑spacing to match width of name */
+/* Slogan line – same block width as name */
 .slogan {
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 1px;
-    display: inline-block;
-    width: 100%;
 }
 
 /* RIGHT SIDE */
@@ -71,13 +74,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 6px;
+    gap: 4px;
 }
 
+/* Right titles sized to match header height visually */
 .nav-item {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 22px;
     color: #103159;
     text-decoration: none;
     text-transform: uppercase;
@@ -89,60 +93,24 @@ body {
     letter-spacing: 2px;
 }
 
-/* MOBILE FIX — PERFECT VERTICAL ALIGNMENT */
+/* MOBILE – keep three columns, just shrink sizes */
 @media (max-width: 768px) {
 
     .main-header {
-        flex-direction: column;
-        align-items: center;
-        padding: 16px 12px;
-    }
-
-    .header-left {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        padding: 10px 12px;
     }
 
     .header-logo {
-        height: 75px;
+        height: 55px;
     }
 
     .title-block {
-        align-items: center;
+        width: 220px;
     }
 
     .name {
-        font-size: 24px;
-        margin-bottom: 8px;
-        text-align: center;
-    }
-
-    .slogan {
         font-size: 20px;
-        text-align: center;
-        width: auto;
-    }
-
-    .header-right {
-        margin-top: 12px;
-        align-items: center;
-    }
-
-    .nav-item {
-        font-size: 22px;
-    }
-}
-
-/* EXTRA SMALL */
-@media (max-width: 480px) {
-
-    .header-logo {
-        height: 65px;
-    }
-
-    .name {
-        font-size: 22px;
+        margin-bottom: 6px;
     }
 
     .slogan {
@@ -150,6 +118,40 @@ body {
     }
 
     .nav-item {
-        font-size: 20px;
+        font-size: 18px;
+    }
+}
+
+/* EXTRA SMALL – still horizontal, no stacking, no cut-off */
+@media (max-width: 480px) {
+
+    .main-header {
+        padding: 8px 8px;
+        gap: 6px;
+    }
+
+    .header-left {
+        gap: 10px;
+    }
+
+    .header-logo {
+        height: 50px;
+    }
+
+    .title-block {
+        width: 190px;
+    }
+
+    .name {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .slogan {
+        font-size: 16px;
+    }
+
+    .nav-item {
+        font-size: 16px;
     }
 }
