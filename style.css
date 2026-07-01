@@ -1,10 +1,10 @@
 /* ==========================================================
    AVENMARK DIGITAL
-   Ethan McCaffrey — Stylesheet
+   CLEAN GRID ARCHITECTURE VERSION
 ========================================================== */
 
 /* ===========================
-   GLOBAL
+   GLOBAL RESET
 =========================== */
 
 * {
@@ -29,17 +29,17 @@ body {
     flex-direction: column;
 }
 
-/* Spacer for fixed header layout */
-main {
+/* MAIN PAGE AREA */
+.page-content {
     flex: 1;
-    min-height: 60vh;
 }
 
 /* ===========================
-   HEADER
+   HEADER (GRID SYSTEM)
 =========================== */
 
 .main-header {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -48,8 +48,9 @@ main {
 
     background: #E8DCC5;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
     align-items: center;
 
     padding: 12px 16px;
@@ -60,33 +61,36 @@ main {
 /* LEFT SIDE */
 
 .header-left {
-    display: flex;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+
     align-items: center;
+
     gap: 14px;
 }
 
 .header-logo {
     height: clamp(45px, 6vw, 75px);
-    width: auto;
 }
 
-/* TITLE BLOCK */
+/* BRAND TEXT */
 
 .title-block {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    gap: 4px;
 }
 
 .name,
-.slogan,
-.nav-item {
+.slogan {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #103159;
-    white-space: nowrap;
     line-height: 1;
+    white-space: nowrap;
 }
 
 .name {
@@ -94,72 +98,80 @@ main {
 }
 
 .slogan {
-    font-size: clamp(12px, 1.8vw, 20px);
+    font-size: clamp(12px, 1.5vw, 18px);
+    opacity: 0.9;
 }
 
 /* RIGHT NAV */
 
 .header-right {
+
     display: flex;
     flex-direction: column;
+
     align-items: flex-end;
+
     gap: 6px;
 }
 
 .nav-item {
+    font-family: 'Lovelo', 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    font-size: clamp(12px, 2vw, 20px);
+
+    text-transform: uppercase;
     text-decoration: none;
-    font-size: clamp(12px, 2vw, 22px);
+
+    color: #103159;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
 }
 
 .nav-item:hover {
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 .message-item {
     letter-spacing: 2px;
 }
 
-/* TEXT FIT SYSTEM */
-
-.fit-text {
-    display: inline-block;
-    max-width: 100%;
-}
-
 /* ===========================
-   FOOTER (REFINED / COMPACT)
+   FOOTER (CLEAN SYSTEM)
 =========================== */
 
 .main-footer {
-    margin-top: 90px;
 
-    padding: 32px 16px;
+    margin-top: 100px;
+
+    padding: 34px 18px;
 
     background: #E8DCC5;
     color: #103159;
 
     display: flex;
     flex-direction: column;
+
     align-items: center;
     text-align: center;
 
     gap: 10px;
 }
 
-/* NAME */
+/* BRAND */
 
 .footer-name {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
 
-    font-size: clamp(30px, 5vw, 60px);
+    font-size: clamp(32px, 5vw, 60px);
     font-weight: 700;
 
     text-transform: uppercase;
 
     line-height: 1;
 }
-
-/* TAGLINE (FIXED: smaller + cleaner hierarchy) */
 
 .footer-tagline {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
@@ -175,70 +187,77 @@ main {
     line-height: 1;
 }
 
-/* OWNER LINE */
+/* OWNER */
 
-.footer-owner,
-.footer-weather-line,
-.footer-time,
-.footer-copyright {
+.footer-owner {
     font-family: 'Montserrat', sans-serif;
 
     font-size: 14px;
-
     font-weight: 700;
 
     color: #103159;
-}
 
-/* OWNER LINK */
-
-.footer-owner {
     text-decoration: none;
+
     transition: 0.2s ease;
 }
 
 .footer-owner:hover {
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
-/* WEATHER */
+/* WEATHER ROW */
 
 .footer-weather-line {
+
     display: flex;
     align-items: center;
     justify-content: center;
 
+    gap: 8px;
+
     flex-wrap: wrap;
 
-    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* TIME */
 
 .footer-time {
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
     letter-spacing: 0.3px;
 }
 
 /* COPYRIGHT */
 
 .footer-copyright {
+
     display: flex;
     align-items: center;
     justify-content: center;
 
+    gap: 8px;
+
     flex-wrap: wrap;
 
-    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 .footer-copyright a {
     color: #103159;
     text-decoration: none;
-    transition: 0.2s ease;
 }
 
 .footer-copyright a:hover {
-    opacity: 0.75;
+    opacity: 0.7;
 }
 
 .footer-divider {
@@ -246,7 +265,7 @@ main {
 }
 
 /* ===========================
-   RESPONSIVE TWEAKS
+   RESPONSIVE FIXES
 =========================== */
 
 @media (max-width: 768px) {
@@ -256,7 +275,7 @@ main {
     }
 
     .header-right {
-        gap: 5px;
+        gap: 4px;
     }
 
     .main-footer {
@@ -271,15 +290,11 @@ main {
         height: 48px;
     }
 
-    .main-footer {
-        padding: 24px 12px;
-        gap: 7px;
+    .footer-name {
+        font-size: 28px;
     }
 
-    .footer-owner,
-    .footer-weather-line,
-    .footer-time,
-    .footer-copyright {
-        font-size: 13px;
+    .footer-tagline {
+        font-size: 12px;
     }
 }
