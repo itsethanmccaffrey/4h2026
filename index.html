@@ -1,72 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avenmark Digital</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-@font-face {
-    font-family: 'Lovelo';
-    src: url('Lovelo.otf') format('opentype');
-    font-weight: 700;
-}
-</style>
+    <title>Avenmark Digital</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Google Font Fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: "Lovelo";
+            src: url("Lovelo.otf") format("opentype");
+            font-weight: 700;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header class="main-header">
+    <!-- ===========================
+         HEADER
+    ============================ -->
 
-    <div class="header-left">
-        <img src="IMG_4332.jpeg" class="header-logo" alt="Logo">
+    <header class="main-header">
 
-        <div class="title-block">
-            <div class="name fit-text">ETHAN MCCAFFREY</div>
-            <div class="slogan fit-text">MAKING MIDLANDS MORE</div>
+        <div class="header-left">
+
+            <img src="IMG_4332.jpeg"
+                 class="header-logo"
+                 alt="Avenmark Logo">
+
+            <div class="title-block">
+
+                <div class="name fit-text">
+                    ETHAN MCCAFFREY
+                </div>
+
+                <div class="slogan fit-text">
+                    MAKING MIDLANDS MORE
+                </div>
+
+            </div>
+
         </div>
-    </div>
 
-    <div class="header-right">
-        <a class="nav-item fit-text" href="#">ABOUT</a>
-        <a class="nav-item fit-text" href="#">ACHIEVEMENTS</a>
-        <a class="nav-item fit-text message-item" href="#">ETHAN’S MESSAGE</a>
-    </div>
+        <nav class="header-right">
 
-</header>
+            <a class="nav-item fit-text" href="#">
+                ABOUT
+            </a>
 
-<!-- FOOTER -->
-<footer class="main-footer">
+            <a class="nav-item fit-text" href="#">
+                ACHIEVEMENTS
+            </a>
 
-    <div class="footer-name">ETHAN MCCAFFREY</div>
-    <div class="footer-tagline">MAKING MIDLANDS MORE</div>
+            <a class="nav-item fit-text message-item" href="#">
+                ETHAN'S MESSAGE
+            </a>
 
-    <div class="footer-owner">
-        Made at Avenmark by Ethan McCaffrey
-    </div>
+        </nav>
 
-    <div class="footer-links">
-        <a href="#">Avenmark Digital</a>
-        <span class="dot">•</span>
-        <a href="#">Development</a>
-    </div>
+    </header>
 
-    <div class="footer-location">Clemson, SC</div>
+    <!-- ===========================
+         PAGE CONTENT
+         (Temporary Placeholder)
+    ============================ -->
 
-    <div class="footer-weather" id="weather">Loading weather...</div>
+    <main>
 
-    <div class="footer-bottom">
-        <div id="datetime"></div>
-        <div>© <span id="year">2026</span></div>
-    </div>
+        <!--
+            Future sections:
 
-</footer>
+            Hero
+            About
+            Achievements
+            Ethan's Message
+            Contact
 
-<script src="script.js"></script>
+            Footer stays at the bottom.
+        -->
+
+    </main>
+
+    <!-- ===========================
+         FOOTER
+    ============================ -->
+
+    <footer class="main-footer">
+
+        <!-- Brand -->
+
+        <div class="footer-name">
+            ETHAN MCCAFFREY
+        </div>
+
+        <div class="footer-tagline">
+            MAKING MIDLANDS MORE
+        </div>
+
+        <!-- Attribution -->
+
+        <a class="footer-owner"
+           href="#"
+           aria-label="Avenmark Digital">
+
+            Made by Ethan McCaffrey at Avenmark Digital
+
+        </a>
+
+        <!-- Weather -->
+
+        <div class="footer-weather-line">
+
+            <span>Clemson, SC</span>
+
+            <span class="footer-divider">•</span>
+
+            <span id="weather">
+                Loading weather...
+            </span>
+
+        </div>
+
+        <!-- Live Time -->
+
+        <div
+            id="datetime"
+            class="footer-time">
+
+            Loading date...
+
+        </div>
+
+        <!-- Copyright -->
+
+        <div class="footer-copyright">
+
+            <span>
+                © <span id="year">2026</span>
+            </span>
+
+            <span class="footer-divider">•</span>
+
+            <a href="#">
+                Avenmark Digital Development
+            </a>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
