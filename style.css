@@ -1,11 +1,11 @@
-/* Global background */
+/* GLOBAL */
 body {
     margin: 0;
     background-color: #E8DCC5;
     font-family: 'Lovelo', 'Montserrat', sans-serif;
 }
 
-/* Header */
+/* HEADER */
 .main-header {
     width: 100%;
     background-color: #E8DCC5;
@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 24px;
+    padding: 18px 28px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -21,12 +21,11 @@ body {
     z-index: 999;
 }
 
-/* Left side: logo + name + slogan */
+/* LEFT SIDE */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 18px;
-    max-width: 60%;
+    gap: 22px;
 }
 
 .header-logo {
@@ -35,49 +34,50 @@ body {
     object-fit: contain;
 }
 
-/* Name + slogan block */
-.header-title {
+/* NAME + SLOGAN BLOCK */
+.title-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* same visual width for both lines */
-    width: 260px;
 }
 
+/* Both lines same font, bold, uppercase */
 .name,
 .slogan {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #103159;
+    white-space: nowrap;
     line-height: 1.1;
-    text-align: left;
 }
 
-/* Slight size difference allowed, but same block width */
+/* Name line */
 .name {
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
+/* Slogan line — auto‑spacing to match width of name */
 .slogan {
-    font-size: 22px;
+    font-size: 24px;
     letter-spacing: 1px;
+    display: inline-block;
+    width: 100%;
 }
 
-/* Right side navigation */
+/* RIGHT SIDE */
 .header-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 6px;
-    max-width: 35%;
 }
 
 .nav-item {
     font-family: 'Lovelo', 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 28px;
     color: #103159;
     text-decoration: none;
     text-transform: uppercase;
@@ -89,8 +89,9 @@ body {
     letter-spacing: 2px;
 }
 
-/* Ensure header content fits on small screens (no cut-off, no horizontal scroll) */
+/* MOBILE FIX — PERFECT VERTICAL ALIGNMENT */
 @media (max-width: 768px) {
+
     .main-header {
         flex-direction: column;
         align-items: center;
@@ -98,59 +99,57 @@ body {
     }
 
     .header-left {
-        max-width: 100%;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
 
     .header-logo {
-        height: 70px;
+        height: 75px;
     }
 
-    .header-title {
-        width: 220px;
+    .title-block {
+        align-items: center;
     }
 
     .name {
-        font-size: 22px;
+        font-size: 24px;
         margin-bottom: 8px;
         text-align: center;
     }
 
     .slogan {
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
+        width: auto;
     }
 
     .header-right {
-        max-width: 100%;
+        margin-top: 12px;
         align-items: center;
-        margin-top: 10px;
     }
 
     .nav-item {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
 
-/* Extra small screens */
+/* EXTRA SMALL */
 @media (max-width: 480px) {
-    .header-logo {
-        height: 60px;
-    }
 
-    .header-title {
-        width: 200px;
+    .header-logo {
+        height: 65px;
     }
 
     .name {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .slogan {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .nav-item {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
