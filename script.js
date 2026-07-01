@@ -1,46 +1,8 @@
 /* ==========================================================
    AVENMARK DIGITAL
-   Script.js
+   CLEAN SCRIPT (NO LAYOUT INTERFERENCE)
 ========================================================== */
 
-/* ===========================
-   TEXT FIT SYSTEM
-=========================== */
-
-function fitAllText() {
-
-    const elements = document.querySelectorAll(".fit-text");
-
-    elements.forEach(el => {
-
-        let parentWidth = el.parentElement.offsetWidth;
-
-        let fontSize = parseFloat(
-            window.getComputedStyle(el).fontSize
-        );
-
-        el.style.transform = "scaleX(1)";
-        el.style.fontSize = fontSize + "px";
-
-        while (el.scrollWidth > parentWidth && fontSize > 8) {
-
-            fontSize -= 0.5;
-            el.style.fontSize = fontSize + "px";
-
-        }
-
-        if (el.scrollWidth > parentWidth) {
-
-            let scale = parentWidth / el.scrollWidth;
-
-            el.style.transform = `scaleX(${scale})`;
-            el.style.transformOrigin = "left";
-
-        }
-
-    });
-
-}
 
 /* ===========================
    CLOCK (LIVE TIME)
@@ -70,16 +32,15 @@ function updateDateTime() {
     const el = document.getElementById("datetime");
 
     if (el) {
-
         el.textContent = `${dateString} • ${timeString}`;
-
     }
 
 }
 
+
 /* ===========================
    WEATHER (CLEMSON, SC)
-   Open-Meteo API (Fahrenheit)
+   Open-Meteo (Fahrenheit)
 =========================== */
 
 async function updateWeather() {
@@ -94,20 +55,15 @@ async function updateWeather() {
             "&temperature_unit=fahrenheit";
 
         const res = await fetch(url);
-
         const data = await res.json();
 
         const temp = Math.round(data.current_weather.temperature);
-
         const code = data.current_weather.weathercode;
 
         const el = document.getElementById("weather");
 
         if (el) {
-
-            el.textContent =
-                `${temp}°F • ${weatherCodeToText(code)}`;
-
+            el.textContent = `${temp}°F • ${weatherCodeToText(code)}`;
         }
 
     } catch (err) {
@@ -115,17 +71,16 @@ async function updateWeather() {
         const el = document.getElementById("weather");
 
         if (el) {
-
             el.textContent = "Weather unavailable";
-
         }
 
     }
 
 }
 
+
 /* ===========================
-   WEATHER CODE CONVERSION
+   WEATHER CODE TRANSLATION
 =========================== */
 
 function weatherCodeToText(code) {
@@ -144,13 +99,13 @@ function weatherCodeToText(code) {
 
 }
 
+
 /* ===========================
    INIT
 =========================== */
 
 window.addEventListener("load", () => {
 
-    fitAllText();
     updateDateTime();
     updateWeather();
 
@@ -158,5 +113,3 @@ window.addEventListener("load", () => {
     setInterval(updateWeather, 10 * 60 * 1000);
 
 });
-
-window.addEventListener("resize", fitAllText);
